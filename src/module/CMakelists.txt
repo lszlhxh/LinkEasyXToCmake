@@ -7,6 +7,7 @@ add_library(
     ${module_cpp_list}
 )
 
+# 为module指定头文件目录
 target_include_directories(
     module
     PUBLIC

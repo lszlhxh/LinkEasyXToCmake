@@ -1,4 +1,3 @@
-#include <iostream>
 #include "frame.h"
 
 int main(int argc, char const *argv[])
