@@ -1,0 +1,21 @@
+file(GLOB module_cpp_list ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+
+# 生成静态库，就不用link easyX 的两个库
+add_library(
+    module
+    SHARED
+    ${module_cpp_list}
+)
+
+target_include_directories(
+    module
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+# 生成动态库，就要使用下面语句
+target_link_libraries(
+    module
+    PUBLIC
+    EasyXa EasyXw
+)
